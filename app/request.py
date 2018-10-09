@@ -49,3 +49,41 @@ def search_article(article_name):
     return search_article_results
 
 
+def get_articles(source_id):
+    '''
+    Function that gets the json response to our url request
+    '''
+    get_articles_url = articles_url.format(source_id,api_key)
+
+    # We use 'with' as our context manager to send a request using theurllib.request.urlopen() function that takes in the get_movies_url as an argument and sends a request as url
+    with urllib.request.urlopen(get_articles_url) as url:
+        get_articles_data = url.read()
+        get_articles_response = json.loads(get_articles_data)
+
+        articles_results = None
+
+        if get_articles_response['articles']:
+            articles_list = get_articles_response['articles']
+            articles_results = process_articles_results(articles_list) # function that takes in the list of dictionary objects and returns a list of movie objects
+
+    return articles_results
+
+
+def get_sources(category):
+    '''
+    Function that gets the json response to url request 
+    '''
+    get_sources_url = news_sources_url.format(category,api_key)
+    with urllib.request.urlopen(get_sources_url) as url:
+        get_sources_data = url.read()
+        get_sources_response = json.loads(get_sources_data)
+
+        source_results = None
+
+        if get_sources_response['sources']:
+            source_results_list = get_sources_response['sources']
+            source_results = process_source_results(source_results_list)
+
+    return source_results
+
+
