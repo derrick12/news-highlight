@@ -1,9 +1,9 @@
-from flask import render_template 
-from app import app
+from flask import render_template
+from . import main
 
-@app.app_errorhandler(404)
+@main.errorhandler(404)
 def four_Ow_four(error):
     '''
-    Function to render the 404 error page 
+    Function to render the 404 error page
     '''
     return render_template('fourOwfour.html'),404
