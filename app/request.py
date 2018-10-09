@@ -87,3 +87,51 @@ def get_sources(category):
     return source_results
 
 
+def process_articles_results(articles_list):
+    '''
+    Function  that processes the article result and transform them to a list of Objects
+
+    Args:
+        articles_list: A list of dictionaries that contain source details
+
+    Returns :
+        articles_results: A list of source objects
+    '''
+    # We loop through the list of dictionaries using the get() method and pass in the keys so that we can access the values.
+    article_results = []
+    for article in articles_list:
+        author = article.get('author')
+        title = article.get('title')
+        description = article.get('description')
+        url = article.get('url')
+        image = article.get('urlToImage')
+        publishedAt = article.get('publishedAt')
+
+        article_object = Article(author,title,description,url,image,publishedAt)
+        article_results.append(article_object)
+
+    return article_results
+
+def process_source_results(source_list):
+    '''
+    Function  that processes the source result and transform them to a list of Objects
+
+    Args:
+        source_list: A list of dictionaries that contain source details
+
+    Returns :
+        source_results: A list of source objects
+    '''
+    # We loop through the list of dictionaries using the get() method and pass in the keys so that we can access the values.
+    source_results = []
+    for source_item in source_list:
+        id = source_item.get('id')
+        name = source_item.get('name')
+        description = source_item.get('description')
+        category = source_item.get('category')
+        language = source_item.get('language')
+
+        source_object = Source(id,name,description,category,language)
+        source_results.append(source_object)
+
+    return source_results
