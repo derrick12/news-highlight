@@ -1,0 +1,116 @@
+{% extends 'base.html'%} {% import 'macros.html' as macro %}
+
+<!-- Styles block -->
+
+{% block styles%} {{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}"> {% endblock %}
+
+<!-- Content block -->
+{% block content%}
+<div class="container">
+    <div class="text-align: centre">
+        <form>
+            <input type="text" name="article_query" placeholder="Search for an Article" class="form-control">
+            <br>
+            <input type="submit" value="Search" class="btn btn-default">
+        </form>
+    </div>
+    <br>
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-bottom: 50px;">
+        <div class="panel" style="background-color: rgba(245, 245, 245, 0.4);">
+            <div class="panel-heading">
+                <h2>General News Sources.</h2>
+            </div>
+        </div>
+        <hr>
+        <div class="is-flex" style="display: flex; flex-wrap: wrap;">
+            {{macro.displaySourceList(general)}}
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-bottom: 50px;">
+        <div class="panel" style="background-color: rgba(245, 245, 245, 0.4);">
+            <div class="panel-heading">
+                <h2>Technology News Sources.</h2>
+            </div>
+        </div>
+        <hr>
+        <div class="is-flex" style="display: flex; flex-wrap: wrap;">
+            {{macro.displaySourceList(technology)}}
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-bottom: 50px;">
+        <div class="panel" style="background-color: rgba(245, 245, 245, 0.4);">
+            <div class="panel-heading">
+                <h2>Business News Sources.</h2>
+            </div>
+        </div>
+        <hr>
+        <div class="is-flex" style="display: flex; flex-wrap: wrap;">
+            {{macro.displaySourceList(business)}}
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-bottom: 50px;">
+        <div class="panel" style="background-color: rgba(245, 245, 245, 0.4);">
+            <div class="panel-heading">
+                <h2>Sports News Sources.</h2>
+            </div>
+        </div>
+        <hr>
+        <div class="is-flex" style="display: flex; flex-wrap: wrap;">
+            {{macro.displaySourceList(sports)}}
+        </div>
+    </div>
+
+
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-bottom: 50px;">
+        <div class="panel" style="background-color: rgba(245, 245, 245, 0.4);">
+            <div class="panel-heading">
+                <h2>Health News Sources.</h2>
+            </div>
+        </div>
+        <hr>
+        <div class="is-flex" style="display: flex; flex-wrap: wrap;">
+            {{macro.displaySourceList(health)}}
+        </div>
+    </div>
+
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-bottom: 50px;">
+        <div class="panel" style="background-color: rgba(245, 245, 245, 0.4);">
+            <div class="panel-heading">
+                <h2>Science News Sources.</h2>
+            </div>
+        </div>
+        <hr>
+        <div class="is-flex" style="display: flex; flex-wrap: wrap;">
+            {{macro.displaySourceList(science)}}
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-bottom: 50px;">
+        <div class="panel" style="background-color: rgba(245, 245, 245, 0.4);">
+            <div class="panel-heading">
+                <h2>Entertainment News Sources.</h2>
+            </div>
+        </div>
+        <hr>
+        <div class="is-flex" style="display: flex; flex-wrap: wrap;">
+            {{macro.displaySourceList(entertainment)}}
+        </div>
+    </div>
+
+
+    <footer class="py-5" style="background-color: rgba(245, 245, 245, 0.4);">
+        <div class="container">
+            <p class="m-0 text-center text-white">Made with love by D.k - Copyright &copy; 2018</p>
+        </div>
+    </footer>
+
+
+</div>
+{% endblock%}
