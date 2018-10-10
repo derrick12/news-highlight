@@ -22,6 +22,8 @@ This is an application that previews news articles from various sources using th
 ## Technologies Used
 This application was made using Python3 and flask
 
+Live website at https://news-highlight12.herokuapp.com/ 
+
 ## Support and contact details
 Feel free to contact me incase of any issues at derrickwaweru@gmail.com
 
