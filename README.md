@@ -26,7 +26,7 @@ This application was made using Python3 and flask
 ## Support and contact details
 Feel free to contact me incase of any issues at derrickwaweru@gmail.com
 
-Live website at https://news-highlight12.herokuapp.com/ 
+Live website at https://news-highlight-21.herokuapp.com/
 
 ## MIT License
 
